@@ -9,7 +9,3 @@
 
 # Clone ou atualize este projeto
 * https://github.com/santiagosilas/2020.1-WD
-
-
-
-Começaremos em instantes
