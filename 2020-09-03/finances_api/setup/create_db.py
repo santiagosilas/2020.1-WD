@@ -22,10 +22,11 @@ if __name__ == "__main__":
         users = Client.query.all()
 
         # Adiciona um usuário
-        username, email = 'admin', 'admin@finances.com'
-        u = Client(username, email)
-        db.session.add(u)
-        db.session.commit()
+        for i in range(1000):
+            username, email = f'admin{i}', f'admin{i}@finances.com'
+            u = Client(username, email)
+            db.session.add(u)
+            db.session.commit()
 
         data = ClientService.get_all()
         print(data)

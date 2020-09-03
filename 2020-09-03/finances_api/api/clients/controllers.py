@@ -88,3 +88,13 @@ def delete_client(client_id):
 
     client_schema = ClientSchema()
     return client_schema.jsonify(client)
+
+
+@blueprint.route('/api/clients/page/<int:page_num>', methods=['GET'])
+def pag_clients(page_num):
+    
+    clients = ClientService.paginate(
+        per_page=20, page=page_num).items
+    
+    clients_schema = ClientSchema(many=True)
+    return clients_schema.jsonify(clients)

@@ -67,3 +67,9 @@ class ClientService:
             db.session.delete(client)
             db.session.commit()  
         return client
+
+    @staticmethod
+    def paginate(per_page, page):
+        clients = Client.query.paginate(
+            per_page = per_page, page = page)
+        return clients
